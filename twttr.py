@@ -1,11 +1,16 @@
 def main():
     frase = input("Input: ")
-    strp_vgls(frase)
-
-def strp_vgls(frase):
     print("Output: ", end="")
+    print(shorten(frase))
+
+
+##New code with return will make tests easier
+def shorten(frase):
+    msg=""
     for letter in frase:
         if (letter.lower() not in {"a","e","i","o","u"}):
-            print(letter,end="")
-    print()
-main()
+            msg=msg+letter
+    return msg
+
+if __name__ == "__main__":
+    main()
